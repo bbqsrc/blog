@@ -65,6 +65,10 @@ a:hover {
   vertical-align: top;
 }
 
+.post article {
+  line-height: 1.4em;
+}
+
 div.continue {
   text-align: right;
 }
