@@ -1,0 +1,13 @@
+#blog-title { 
+  float: left; 
+  margin-top: 1em;
+}
+
+#blog-nav {
+  float: right;
+  margin-top: 1em;
+}
+
+#top-menu li.widget {
+  float: left;
+}

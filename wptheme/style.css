@@ -1,0 +1,251 @@
+/*
+Theme Name: Brendan's Theme
+Theme URI: http://brendan.so/
+Description: Brendan's WordPress theme
+Author: Brendan Molloy
+Author URI: http://brendan.so/
+Version: 0.1
+Tags: brendan, wins, forever
+
+License: CC0
+License URI: http://creativecommons.org/publicdomain/zero/1.0/
+*/
+
+body {
+  font-family: 'Scada', sans-serif;
+  color: #555;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+pre.email {
+  font-family: 'Scada', sans-serif;
+  font-size: 95%;
+  margin: 1em;
+  background-color: #fcfcfc;
+  border-radius: 3px;
+  padding: 0.8em;
+  box-shadow: 0px 0px 5px #f0f0f0;
+  white-space: pre-line;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+
+.post article a,
+.post .continue a {
+  border-bottom: 1px dotted #d55;
+}
+
+.post article a:hover,
+.post .continue a:hover {
+  border-bottom: 1px solid #d55;
+}
+
+.post article a:active,
+.post .continue a:active {
+  border-bottom: 2px solid #d55;
+}
+
+.post header {
+  display: table;
+  width: 100%;
+}
+
+.post .title,
+.post .info {
+  display: table-cell;
+  vertical-align: top;
+}
+
+div.continue {
+  text-align: right;
+}
+
+div.continue a {
+  color: #d55;
+  font-size: 90%;
+}
+
+#page {
+  margin: 0 auto;
+  padding: 0 0.3em;
+  max-width: 940px;
+}
+
+#blog-header, #blog-footer {
+  display: table;
+  width: 100%;
+}
+
+#blog-footer {
+  text-align: center;
+  border-top: 1px dotted #ddd;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+#blog-title, #blog-nav {
+  padding-bottom: 1em;
+}
+
+#blog-content header {
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 1em;
+}
+
+#blog-content header h2 {
+  margin: 0;
+}
+
+#blog-content header div.info p {
+  margin: 0;
+}
+
+#blog-content header div.info {
+  font-size: 80%;
+  text-align: right;
+  color: #999;
+}
+
+#blog-content header div.info .categories {
+  font-size: 90%;
+}
+
+#blog-content header div.info .tags {
+  font-size: 85%;
+}
+
+#blog-content header div.byline {
+  font-size: 80%;
+  margin-top: 0.4em;
+}
+
+#blog-content .post {
+  box-shadow: 0px 0px 5px #ddd;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #fdfdff;
+  border-top: 0.5em solid rgba(210, 200, 200, 0.5);
+}
+
+#content {
+  display: table;
+  clear: both;
+  width: 100%;
+}
+      
+#blog-title h1 {
+  color: #445;
+  white-space: nowrap;
+  margin-bottom: 0;
+}
+
+#blog-title h1 a:hover {
+  font-style: italic;
+  margin-left: -1px;
+}
+
+#top-menu {
+  display: table;
+  padding-left: 0;
+  padding-right: 0.6em;
+  float: right;
+}
+
+#top-menu ul,
+#sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#top-menu ul li,
+#sidebar ul li {
+  border-left: 1px solid #d55;
+  padding: 0 4px;
+  margin: 4px 0;
+}
+
+#top-menu ul li:hover,
+#sidebar ul li:hover {
+  border-left: 2px solid red;
+  font-style: italic;
+  margin-left: -1px;
+  cursor: pointer;
+}
+
+#top-menu > li { 
+  padding: 0 1em;
+  display: table-cell;
+  font-size: 80%;
+}
+
+#top-menu > li > .widget-title {
+  font-weight: bold;
+  color: #e55;
+  font-size: 120%;
+  margin: 0;
+}
+
+#sidebar {
+  padding-left: 2em;
+  width: 150px;
+  display: table-cell;
+  font-size: 80%;
+}
+
+#blog-content {
+  vertical-align: top;
+  display: table-cell;
+}
+
+#blog-title {
+  padding-right: 1em;
+  display: table-cell;
+  vertical-align: top;
+}
+
+#blog-nav {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.comment-form-comment label {
+  display: block;
+}
+
+@media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 767px) {
+  #blog-title {
+    text-align: center;
+    padding-right: 0;
+  }
+
+  #blog-title, #blog-nav {
+    padding-bottom: 2em;
+  }
+  
+  #sidebar {
+    padding-left: 0;
+  }
+
+  #blog-title, #blog-content, #blog-nav, #sidebar {
+    float: left;
+    width: 100%;
+  }
+
+  #top-menu {
+    float: none;
+    margin: 0 auto;
+  }
+
+  #sidebar div {
+    padding: 0 1em;
+  }
+}
