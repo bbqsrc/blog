@@ -185,6 +185,11 @@ div.continue a {
   cursor: pointer;
 }
 
+#top-menu ul li a,
+#sidebar ul li a {
+  display: block;
+}
+
 #top-menu > li { 
   padding: 0 1em;
   display: table-cell;
