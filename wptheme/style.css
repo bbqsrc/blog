@@ -23,10 +23,10 @@ pre.email {
   font-family: 'Scada', sans-serif;
   font-size: 95%;
   margin: 1em;
-  background-color: #fcfcfc;
+  background-color: #f8f8f8;
   border-radius: 3px;
   padding: 0.8em;
-  box-shadow: 0px 0px 5px #f0f0f0;
+  box-shadow: 0px 0px 5px #eaeaea;
   white-space: pre-wrap;
 }
 
