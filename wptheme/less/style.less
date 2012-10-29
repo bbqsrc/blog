@@ -265,6 +265,44 @@ div.continue {
   }
 }
 
+.required {
+  color: red;
+}
+
+.comment-form-author,
+.comment-form-email {
+  label:after {
+    color: red;
+    content: " *";
+  }
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+  label {
+    display: block;
+  }
+
+  .required {
+    display: none;
+  }
+}
+
+input[type='text'],
+textarea {
+  border: 1px solid gray;
+  padding: 3px 2px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+input[type='text']:focus,
+textarea:focus {
+  outline: 1px solid fadeout(@underline-color, 50%);
+  box-shadow: 0px 0px 5px @underline-color;
+}
 
 @media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 767px) {
   #blog-title {
