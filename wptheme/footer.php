@@ -1,7 +1,5 @@
 
-      <footer id='blog-footer'>
-        :)
-      </footer>
+      <footer id='blog-footer'></footer>
       
     </div>
     <?php wp_footer(); ?>
