@@ -177,10 +177,14 @@ div.continue a {
   margin: 4px 0;
 }
 
+#top-menu ul li a:hover,
+#sidebar ul li a:hover {
+  font-style: italic;
+}
+
 #top-menu ul li:hover,
 #sidebar ul li:hover {
   border-left: 2px solid red;
-  font-style: italic;
   margin-left: -1px;
   cursor: pointer;
 }
