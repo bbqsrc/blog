@@ -251,15 +251,17 @@ div.continue {
 
 #comments ul {
   list-style-type: none;
-  border-left: 1px solid @underline-color;
-  margin: 1em 2em;
-  padding-left: 1em;
   
-  &:hover {
-    border-left: 2px solid red;
-  }
-  article:hover {
-    margin-left: -1px;
+
+  li {
+    &:hover {
+      border-left: 2px solid red;
+      margin-left: -1px;
+    }
+
+    border-left: 1px solid @underline-color;
+    padding-left: 1em;
+    margin: 2em 0;
   }
 }
 
