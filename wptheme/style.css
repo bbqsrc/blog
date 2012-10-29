@@ -230,6 +230,22 @@ div.continue a {
   display: block;
 }
 
+/* Twitter Pro widget stuff */
+#sidebar .widget_twitter span {
+  display: block;
+  padding-bottom: 0.1em;
+} 
+
+#sidebar .widget_twitter a {
+  display: inline;
+} 
+
+#sidebar .widget_twitter .intent-meta a {
+  display: inline-block;
+  padding-right: 0.8em;
+}
+/* End Twitter Pro widget stuff */
+
 @media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 767px) {
   #blog-title {
     text-align: center;
