@@ -251,9 +251,14 @@ div.continue {
 
 #comments ul {
   list-style-type: none;
-  border-left: 1px solid red;
+  border-left: 1px solid @underline-color;
   margin: 1em 2em;
   padding-left: 1em;
+  
+  &:hover {
+    border-left: 2px solid red;
+    margin-left: -1px;
+  }
 }
 
 
