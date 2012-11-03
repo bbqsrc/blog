@@ -20,6 +20,10 @@ License URI: http://creativecommons.org/publicdomain/zero/1.0/
 @widget-title-color: #e55;
 @post-top: rgba(210, 200, 200, 0.5);
 
+.screen-reader-text {
+  display: none;
+}
+
 body {
   font-family: @sans-serif-font;
   color: @dark-fg;
@@ -184,6 +188,7 @@ div.continue {
 #content {
   display: table;
   clear: both;
+  table-layout: fixed;
   width: 100%;
 }
       
@@ -254,7 +259,7 @@ div.continue {
 
 #sidebar {
   padding-left: 2em;
-  width: 150px;
+  width: 200px;
   display: table-cell;
   font-size: 80%;
 }
@@ -330,6 +335,60 @@ textarea:focus {
   outline: 1px solid fadeout(@underline-color, 50%);
   box-shadow: 0px 0px 5px @underline-color;
 }
+
+#s {
+  border-radius: 3px 0px 0px 3px;
+  box-sizing: border-box;
+  margin: 0;
+  height: 24px;
+  border-right: 0;
+}
+
+#searchsubmit {
+    height: 24px;
+    margin-left: -6px;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#dedede));
+    background-image: -moz-linear-gradient(top,#fff,#dedede);
+    background-image: -o-linear-gradient(top,#fff,#dedede);
+    background-image: -ms-linear-gradient(top,#fff,#dedede);
+    background-image: linear-gradient(top,#fff,#dedede);
+    border: #ccc solid 1px;
+    -moz-border-radius: 0px 3px 3px 0px;
+    -webkit-border-radius: 0px 3px 3px 0px;
+    border-radius: 0px 3px 3px 0px;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    max-width: 98%;
+    width: 52px;
+    overflow: hidden;
+}
+
+#searchsubmit:focus,
+#searchsubmit:hover,
+#searchsubmit:active {
+    border-color: #bbb;
+    background-color: #f8f8f8;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#d9d9d9));
+    background-image: -moz-linear-gradient(top,#f8f8f8,#d9d9d9);
+    background-image: -o-linear-gradient(top,#f8f8f8,#d9d9d9);
+    background-image: -ms-linear-gradient(top,#f8f8f8,#d9d9d9);
+    background-image: linear-gradient(top,#f8f8f8,#d9d9d9);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+#searchsubmit:active {
+    background-color: #efefef;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0 3px 5px rgba(0,0,0,0.1);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.1);
+}
+
 
 @media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 767px) {
   #blog-title {
