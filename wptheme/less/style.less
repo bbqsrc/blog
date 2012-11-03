@@ -4,15 +4,15 @@ Theme URI: http://brendan.so/
 Description: Brendan's WordPress theme
 Author: Brendan Molloy
 Author URI: http://brendan.so/
-Version: 0.1
+Version: 0.2
 Tags: brendan, wins, forever
 
 License: CC0
 License URI: http://creativecommons.org/publicdomain/zero/1.0/
 */
 
-@font: "Scada", sans-serif;
-
+@sans-serif-font: "Scada", sans-serif;
+@monospace-font: "DejaVu Sans Mono", "Menlo", "Monaco", "Lucida Console", "Consolas", monospace;
 @dark-fg: #555;
 @dark-bg: #ddd;
 @light-bg: #fafafa;
@@ -21,7 +21,7 @@ License URI: http://creativecommons.org/publicdomain/zero/1.0/
 @post-top: rgba(210, 200, 200, 0.5);
 
 body {
-  font-family: @font;
+  font-family: @sans-serif-font;
   color: @dark-fg;
   background-color: @light-bg;
   margin: 0;
@@ -33,19 +33,42 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover, abbr:hover {
   color: black;
 }
 
-pre.email {
-  font-family: @font;
-  font-size: 90%;
-  margin: 1em;
-  background-color: darken(@light-bg, 2%);//#f8f8f8;
-  border-radius: 3px;
+a.no-underline,
+a.no-underline:hover,
+a.no-underline:active {
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+}
+
+abbr:hover {
+  cursor: default;
+}
+
+pre {
   padding: 0.8em;
+  margin: 1em;
+  border-radius: 3px;
+}
+
+code, kbd {
+  border-radius: 1px;
+}
+
+pre, code, kbd {
+  font-family: @monospace-font;
+  font-size: 75%;
+  background-color: darken(@light-bg, 2%);//#f8f8f8;
   box-shadow: 0px 0px 5px darken(@light-bg, 10%);//#eaeaea;
   white-space: pre-wrap;
+
+  .email {
+    font-family: @sans-serif-font;
+    font-size: 90%;
+  }
 }
 
 .post {
