@@ -10,7 +10,11 @@
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
     <link href="<?php echo get_template_directory_uri(); ?>/style.css" type="text/css" rel="stylesheet" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Scada:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
-    <?php wp_head(); ?>
+    <?php wp_head(); $options = get_option("brendan_options");
+        if (array_key_exists('head', $options)) {
+                echo $options['head'];
+        }?>
+
   </head>
 
   <body>
@@ -27,3 +31,8 @@
           </ul>
         </nav>
       </header>
+    <?php $options = get_option("brendan_options");
+        if (array_key_exists('header', $options)) {
+                echo $options['header'];
+        }?>
+

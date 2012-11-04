@@ -68,3 +68,48 @@ function brendan_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
+
+add_action( 'admin_menu', 'brendan_theme_menu' );
+
+function brendan_theme_menu() {
+  add_theme_page( "Brendan's Theme Bits", "Theme Bits", "administrator", "brendans-theme-bits", 'brendan_theme_options' );
+  add_action( "admin_init", "brendan_register_settings" );
+}
+
+function brendan_register_settings() {
+  register_setting( 'brendan_options', 'brendan_options' );
+  add_settings_section( 'brendan_options_main', 'Main Settings', 'brendan_options_section_text', 'brendan_options_page' );
+  add_settings_field( 'head', 'Content for &lt;head&gt;', 'brendan_options_head_string', 'brendan_options_page', 'brendan_options_main' );
+  add_settings_field( 'header', 'Content after blog header', 'brendan_options_header_string', 'brendan_options_page', 'brendan_options_main' );
+  add_settings_field( 'footer', 'Content before &lt;/body&gt;', 'brendan_options_footer_string', 'brendan_options_page', 'brendan_options_main' );
+
+}
+
+function brendan_options_head_string() {
+  $options = get_option('brendan_options');
+  echo "<textarea style='width: 100%' id='brendan_options_main_head' name='brendan_options[head]'>{$options['head']}</textarea>";
+}
+
+function brendan_options_header_string() {
+  $options = get_option('brendan_options');
+  echo "<textarea style='width: 100%' id='brendan_options_main_header' name='brendan_options[header]'>{$options['header']}</textarea>";
+}
+
+function brendan_options_footer_string() {
+  $options = get_option('brendan_options');
+  echo "<textarea style='width: 100%' id='brendan_options_main_footer' name='brendan_options[footer]'>{$options['footer']}</textarea>";
+}
+
+function brendan_theme_options() {
+?>
+<div class="wrap">
+<h2>Brendan's Theme Bits</h2>
+
+<form method="post" action="options.php">
+    <?php settings_fields('brendan_options'); ?>
+    <?php do_settings_sections('brendan_options_page'); ?>
+    <input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>">
+</form>
+</div>
+<?php } ?>
+
