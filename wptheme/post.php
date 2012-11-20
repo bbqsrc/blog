@@ -6,7 +6,7 @@
                 <div class='byline'>
                   <em>
                     <a href="<?php echo get_day_link(get_the_time('Y'), get_the_time('m'), get_the_time('d')); ?>">
-                      <?php echo get_the_time('d F, Y'); ?>
+                      <?php echo get_the_time('j F, Y'); ?>
                     </a>
                   </em>
                   &mdash;
