@@ -17,7 +17,7 @@
 
   </head>
 
-  <body<?php if is_home(): ?> class='home'<?php endif; ?>>
+  <body<?php if (is_home()): ?> class='home'<?php endif; ?>>
     <div id='page'>
       <header id='blog-header'>
         <div id="blog-title">
