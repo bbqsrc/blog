@@ -4,7 +4,7 @@ Theme URI: http://brendan.so/
 Description: Brendan's WordPress theme
 Author: Brendan Molloy
 Author URI: http://brendan.so/
-Version: 0.3
+Version: 0.4
 Tags: brendan, wins, forever
 
 License: CC0
@@ -16,6 +16,7 @@ License URI: http://creativecommons.org/publicdomain/zero/1.0/
 @dark-fg: #555;
 @dark-bg: #ddd;
 @light-bg: #fafafa;
+@email-reply-bg: #f5ffff;
 @underline-color: #d55;
 @widget-title-color: #e55;
 @post-top: rgba(210, 200, 200, 0.5);
@@ -49,7 +50,7 @@ a.no-underline:active {
 }
 
 abbr:hover {
-  cursor: default;
+  cursor: help;
 }
 
 pre {
@@ -65,13 +66,18 @@ code, kbd {
 pre, code, kbd {
   font-family: @monospace-font;
   font-size: 75%;
-  background-color: darken(@light-bg, 2%);//#f8f8f8;
-  box-shadow: 0px 0px 5px darken(@light-bg, 10%);//#eaeaea;
+  background-color: darken(@light-bg, 2%);
+  box-shadow: 0px 0px 5px darken(@light-bg, 10%);
   white-space: pre-wrap;
+}
 
-  &.email {
-    font-family: @sans-serif-font;
-    font-size: 90%;
+pre.email {
+  font-family: @sans-serif-font;
+  font-size: 90%;
+
+  &.reply {
+    background-color: @email-reply-bg;
+    box-shadow: 0px 0px 5px darken(@email-reply-bg, 15%);
   }
 }
 
