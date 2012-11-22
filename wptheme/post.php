@@ -16,8 +16,12 @@
               <div class='info'>
                 <p class="categories"><?php the_category(', ') ?></p>
                 <p class="tags"><?php the_tags('', ', '); ?></p>
+
+                <a class="comments" href="<?php echo (is_home() ? the_permalink() : '' ).'#comments' ?>">
+                  <?php echo get_comments_number(); ?> <img src="<?php echo get_template_directory_uri(); ?>/img/comment.png" alt="comments">
+                </a>
+                <?php endif; ?>
               </div>
-              <?php endif; ?>
             </header>
             
             <article>

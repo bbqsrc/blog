@@ -4,7 +4,7 @@ Theme URI: http://brendan.so/
 Description: Brendan's WordPress theme
 Author: Brendan Molloy
 Author URI: http://brendan.so/
-Version: 0.4
+Version: 0.5
 Tags: brendan, wins, forever
 
 License: CC0
@@ -161,13 +161,15 @@ div.continue {
     }
   
     div.info {
-      p {
-        margin: 0;
-      }
-  
+      position: relative;
+      padding-bottom: 12px; // for comment thing
       font-size: 80%;
       text-align: right;
       color: #999;
+      
+      p {
+        margin: 0;
+      }
   
       .categories {
         font-size: 90%;
@@ -175,6 +177,17 @@ div.continue {
   
       .tags {
         font-size: 85%;
+      }
+
+      .comments {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 12px;
+
+        img {
+          vertical-align: middle;
+        }
       }
     }
   
