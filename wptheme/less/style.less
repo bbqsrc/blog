@@ -4,7 +4,7 @@ Theme URI: http://brendan.so/
 Description: Brendan's WordPress theme
 Author: Brendan Molloy
 Author URI: http://brendan.so/
-Version: 0.5
+Version: 0.6
 Tags: brendan, wins, forever
 
 License: CC0
@@ -82,16 +82,64 @@ pre.email {
 }
 
 .post {
+  box-shadow: 0px 0px 5px @dark-bg;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #fdfdff;
+  border-top: 0.5em solid @post-top;
+  
   header {
     display: table;
     width: 100%;
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 1em;
+  
+    h2 {
+      margin: 0;
+    }
+  
+    div.info {
+      position: relative;
+      padding-bottom: 12px; // for comment thing
+      font-size: 80%;
+      text-align: right;
+      color: #999;
+      
+      p {
+        margin: 0;
+      }
+  
+      .categories {
+        font-size: 90%;
+      }
+  
+      .tags {
+        font-size: 85%;
+      }
+
+      .comments {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 12px;
+
+        img {
+          vertical-align: middle;
+        }
+      }
+    }
+  
+    div.byline {
+      font-size: 80%;
+      margin-top: 0.4em;
+    }
   }
 
   article {
     line-height: 1.4em;
   }
 
-  article, .continue {
+  article, .continue, footer {
     a {
       border-bottom: 1px dotted @underline-color;
       
@@ -102,6 +150,22 @@ pre.email {
       &:active {
         border-bottom: 2px solid @underline-color;
       }
+    }
+  }
+
+  footer {
+    display: table;
+    width: 100%;
+    border-top: 1px solid #efefef;
+    padding-top: 1em;
+
+    .next, .previous {
+      display: table-cell;
+      width: 50%;
+    }
+
+    .next {
+      text-align: right;
     }
   }
 
@@ -152,58 +216,6 @@ div.continue {
   width: 100%;
   padding-right: 2em;
 
-  header {
-    border-bottom: 1px solid #efefef;
-    padding-bottom: 1em;
-  
-    h2 {
-      margin: 0;
-    }
-  
-    div.info {
-      position: relative;
-      padding-bottom: 12px; // for comment thing
-      font-size: 80%;
-      text-align: right;
-      color: #999;
-      
-      p {
-        margin: 0;
-      }
-  
-      .categories {
-        font-size: 90%;
-      }
-  
-      .tags {
-        font-size: 85%;
-      }
-
-      .comments {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        font-size: 12px;
-
-        img {
-          vertical-align: middle;
-        }
-      }
-    }
-  
-    div.byline {
-      font-size: 80%;
-      margin-top: 0.4em;
-    }
-  }
-}
-
-#blog-content .post {
-  box-shadow: 0px 0px 5px @dark-bg;
-  padding: 1em;
-  margin-bottom: 2em;
-  background-color: #fdfdff;
-  border-top: 0.5em solid @post-top;
 }
 
 #content {
