@@ -34,7 +34,7 @@ function brendan_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<footer class="comment-meta">
+			<div class="comment-meta">
 				<div class="comment-author vcard">
 					<?php
 						printf( __( '%1$s on %2$s <span class="says">said:</span>', 'brendan' ),
@@ -55,7 +55,7 @@ function brendan_comment( $comment, $args, $depth ) {
 					<br />
 				<?php endif; ?>
 
-			</footer>
+			</div>
 
 			<div class="comment-content"><?php comment_text(); ?></div>
 
