@@ -28,11 +28,11 @@
               <?php the_content(''); ?>
             </article>
             
-            <?php if (!is_single() && $pos=strpos($post->post_content, '<!--more-->')): ?>
+            <?php if (!is_single()): if ($pos=strpos($post->post_content, '<!--more-->')): ?>
             <div class='continue'>
               <a href="<?php the_permalink(); ?>">Continue reading '<?php the_title(); ?>' &rsaquo;</a>
             </div>
-            <?php else: 
+            <?php endif; else: 
               $prev_post = get_previous_post();
               $next_post = get_next_post();
             ?>
