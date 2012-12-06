@@ -1,4 +1,8 @@
 <?php
+function brendan_version() {
+  return "0.7";
+}
+
 function brendan_widgets_init() {
   register_sidebar(array(
     'name' => 'Main Sidebar',
