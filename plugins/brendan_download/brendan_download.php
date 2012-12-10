@@ -55,7 +55,7 @@ function brendan_download_shortcode($attrs, $content = null) {
         $out .= "sha1sum: " . $attrs['sha1'] . "\n";
     }
 
-    $out .= "</pre>"
+    $out .= "</pre>";
     return $out;
 }
 add_shortcode('download', 'brendan_download_shortcode');
