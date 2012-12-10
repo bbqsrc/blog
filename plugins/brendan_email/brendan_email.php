@@ -9,6 +9,8 @@ Author URI: http://brendan.so
 License: CC0
  */
 
+// I can't believe this is the best way to stop WP mangling my damn input!
+
 function brendan_get_shortcode_regex() {
 	return
 		  '\\['                              // Opening bracket
@@ -77,10 +79,6 @@ function brendan_email_shortcode($attrs, $content = '') {
         $out .= " reply";
     }
     $out .= "'>";
-   
-    if ($attrs['sent'] != null) {
-        $out .= "Sent: " . $attrs['sent'] . "\n";
-    } 
     
     if ($attrs['from'] != null) {
         $out .= "From: " . $attrs['from'] . "\n";
@@ -90,13 +88,17 @@ function brendan_email_shortcode($attrs, $content = '') {
         $out .= "To: " . $attrs['to'] . "\n";
     } 
     
+    if ($attrs['sent'] != null) {
+        $out .= "Sent: " . $attrs['sent'] . "\n";
+    } 
+    
     if ($attrs['subject'] != null) {
         $out .= "Subject: " . $attrs['subject'] . "\n";
     } 
    
-    $out .= "\n" . $content . "</pre>";
+    $out .= "\n" . trim($content) . "</pre>";
 
-    return $out;
+    return trim($out);
 }
 
 add_filter('the_content', 'brendan_do_email_shortcode', 0);
