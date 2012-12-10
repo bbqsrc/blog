@@ -98,7 +98,7 @@ function brendan_email_shortcode($attrs, $content = '') {
    
     $out .= "\n" . trim($content) . "</pre>";
 
-    return trim($out);
+    return $out;
 }
 
 add_filter('the_content', 'brendan_do_email_shortcode', 0);
