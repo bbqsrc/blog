@@ -20,7 +20,7 @@ function brendan_download_shortcode($attrs, $content = null) {
 
     if ($content != null) {
         if ($attrs['href'] != null) {
-            $out .= "<a href='" + $attrs['href'] + "'>" . $content . "</a>";
+            $out .= "<a href='" . $attrs['href'] . "'>" . $content . "</a>";
         } else {
             $out .= $content;
         }
