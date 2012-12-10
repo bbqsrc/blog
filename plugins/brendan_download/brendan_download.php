@@ -33,15 +33,15 @@ function brendan_download_shortcode($attrs, $content = null) {
            $out .= " [" . $size . " B]";
         }
         
-        if ($size < 1000000) {
+        else if ($size < 1000000) {
            $out .= " [" . number_format($size / 1000, 2) . " KB]";
         }
         
-        if ($size < 1000000000) {
+        else if ($size < 1000000000) {
            $out .= " [" . number_format($size / 1000000, 2) . " MB]";
         }
         
-        if ($size < 1000000000000) {
+        else {
            $out .= " [" . number_format($size / 1000000000, 2) . " GB]";
         }
     }
@@ -55,6 +55,7 @@ function brendan_download_shortcode($attrs, $content = null) {
         $out .= "sha1sum: " . $attrs['sha1'] . "\n";
     }
 
+    $out .= "</pre>"
     return $out;
 }
 add_shortcode('download', 'brendan_download_shortcode');
