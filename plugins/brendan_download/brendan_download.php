@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Download Shortcode
+Plugin Name: Brendan's Download Shortcode
 Plugin URI: https://github.com/bbqsrc/blog
 Description: Shortcode for marking up my downloads 
 Version: 0.1
