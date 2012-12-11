@@ -116,4 +116,3 @@ function brendan_theme_options() {
 </form>
 </div>
 <?php } ?>
-
