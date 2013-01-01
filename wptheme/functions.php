@@ -149,5 +149,15 @@ function brendan_theme_options() {
     <?php do_settings_sections('brendan_options_page'); ?>
     <input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>">
 </form>
-</div>
-<?php } ?>
+</div><?php
+}
+
+
+function brendan_post_queries( $query ) {
+  if (!is_admin() && $query->is_main_query()){
+    if(is_home() || is_category()){
+      $query->set('posts_per_page', 5);
+    }
+  }
+}
+add_action('pre_get_posts', 'brendan_post_queries');
