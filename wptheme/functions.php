@@ -41,10 +41,10 @@ function brendan_scripts_styles() {
 	wp_enqueue_script('brendan-html5shiv', get_template_directory_uri() . '/html5shiv.js');
 	$wp_scripts->add_data('brendan-html5shiv', 'conditional', 'lt IE 9');
 
-	wp_enqueue_style('brendan-shit-browsers', add_query_arg(array('v' => brendan_version()), get_template_directory_uri() . '/shit-browsers.css'));
+	wp_enqueue_style('brendan-shit-browsers', get_template_directory_uri() . '/shit-browsers.css', array(), brendan_version());
 	$wp_styles->add_data('brendan-shit-browsers', 'conditional', 'lt IE 8');
 
-	wp_enqueue_style('brendan-style', add_query_arg(array('v' => brendan_version()), get_stylesheet_uri()));
+	wp_enqueue_style('brendan-style', get_stylesheet_uri(), array(), brendan_version());
 	
 	$query = array('family' => 'Scada:400italic,700italic,400,700');
 	wp_enqueue_style('brendan-fonts', add_query_arg($query, "$protocol://fonts.googleapis.com/css"));
