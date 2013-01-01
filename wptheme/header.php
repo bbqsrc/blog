@@ -3,6 +3,7 @@
   <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
+    <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/html5shiv.js"></script><![endif]-->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
