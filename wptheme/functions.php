@@ -33,6 +33,9 @@ add_action( 'widgets_init', 'brendan_widgets_init' );
 
 
 function brendan_scripts_styles() {
+	global $wp_styles;
+	global $wp_scripts;
+
 	$protocol = is_ssl() ? 'https' : 'http';
 
 	wp_enqueue_script('brendan-html5shiv', get_template_directory_uri() . '/html5shiv.js');
