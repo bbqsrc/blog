@@ -4,8 +4,8 @@
           <?php if (have_posts()) : ?>
 	  <?php while (have_posts()) : the_post(); get_template_part( 'post' ); endwhile; ?>
 	  <?php 
-            $newer = get_previous_posts_link('&laquo; Newer');
-            $older = get_next_posts_link('Older &raquo;');
+            $newer = get_previous_posts_link('&lsaquo; Newer');
+            $older = get_next_posts_link('Older &rsaquo;');
             if ($newer != null || $older != null): ?>
 	  <nav id="pagination" class="post">
 	    <?php if ($newer != null): ?>
