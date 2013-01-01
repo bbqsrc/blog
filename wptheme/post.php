@@ -37,13 +37,13 @@
               $next_post = get_next_post();
             ?>
             <footer>
-              <?php if (!empty($prev_post)): ?>
-              <div class="previous">
-                <a href="<?php echo get_permalink($prev_post->ID) ?>">&lsaquo; <?php echo $prev_post->post_title ?></a>
-              </div>
-              <?php endif; if (!empty($next_post)): ?>
+              <?php if (!empty($next_post)): ?>
               <div class="next">
-                <a href="<?php echo get_permalink($next_post->ID) ?>"><?php echo $next_post->post_title ?> &rsaquo;</a>
+                <a href="<?php echo get_permalink($next_post->ID) ?>">&lsaquo; <?php echo $next_post->post_title ?></a>
+              </div>
+              <?php endif; if (!empty($prev_post)): ?>
+              <div class="previous">
+                <a href="<?php echo get_permalink($prev_post->ID) ?>"><?php echo $prev_post->post_title ?> &rsaquo;</a>
               </div>
               <?php endif; ?>
             </footer>
