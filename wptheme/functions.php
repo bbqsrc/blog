@@ -36,8 +36,7 @@ function brendan_scripts_styles() {
 	$protocol = is_ssl() ? 'https' : 'http';
 
 	wp_enqueue_script('brendan-html5shiv', get_template_directory_uri() . '/html5shiv.js');
-	$wp_styles->add_data('brendan-html5shiv', 'conditional', 'lt IE 9');
-
+	$wp_scripts->add_data('brendan-html5shiv', 'conditional', 'lt IE 9');
 
 	wp_enqueue_style('brendan-shit-browsers', add_query_arg(array('v' => brendan_version()), get_template_directory_uri() . '/shit-browsers.css'));
 	$wp_styles->add_data('brendan-shit-browsers', 'conditional', 'lt IE 8');
