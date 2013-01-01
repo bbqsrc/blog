@@ -1,7 +1,14 @@
 <?php
 function brendan_version() {
-  return "0.7";
+  return "0.8";
 }
+
+
+function brendan_setup() {
+  add_theme_support( 'automatic-feed-links' );
+}
+add_action('after_setup_theme', 'brendan_setup');
+
 
 function brendan_widgets_init() {
   register_sidebar(array(
@@ -23,6 +30,25 @@ function brendan_widgets_init() {
   ));
 }
 add_action( 'widgets_init', 'brendan_widgets_init' );
+
+
+function brendan_scripts_styles() {
+	$protocol = is_ssl() ? 'https' : 'http';
+
+	wp_enqueue_script('brendan-html5shiv', get_template_directory_uri() . '/html5shiv.js');
+	$wp_styles->add_data('brendan-html5shiv', 'conditional', 'lt IE 9');
+
+
+	wp_enqueue_style('brendan-shit-browsers', add_query_arg(array('v' => brendan_version()), get_template_directory_uri() . '/shit-browsers.css'));
+	$wp_styles->add_data('brendan-shit-browsers', 'conditional', 'lt IE 8');
+
+	wp_enqueue_style('brendan-style', add_query_arg(array('v' => brendan_version()), get_stylesheet_uri()));
+	
+	$query = array('family' => 'Scada:400italic,700italic,400,700');
+	wp_enqueue_style('brendan-fonts', add_query_arg($query, "$protocol://fonts.googleapis.com/css"));
+}
+add_action( 'wp_enqueue_scripts', 'brendan_scripts_styles' );
+
 
 function brendan_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
@@ -72,13 +98,14 @@ function brendan_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
-
 add_action( 'admin_menu', 'brendan_theme_menu' );
+
 
 function brendan_theme_menu() {
   add_theme_page( "Brendan's Theme Bits", "Theme Bits", "administrator", "brendans-theme-bits", 'brendan_theme_options' );
   add_action( "admin_init", "brendan_register_settings" );
 }
+
 
 function brendan_register_settings() {
   register_setting( 'brendan_options', 'brendan_options' );
@@ -89,20 +116,24 @@ function brendan_register_settings() {
 
 }
 
+
 function brendan_options_head_string() {
   $options = get_option('brendan_options');
   echo "<textarea style='width: 100%' id='brendan_options_main_head' name='brendan_options[head]'>{$options['head']}</textarea>";
 }
+
 
 function brendan_options_header_string() {
   $options = get_option('brendan_options');
   echo "<textarea style='width: 100%' id='brendan_options_main_header' name='brendan_options[header]'>{$options['header']}</textarea>";
 }
 
+
 function brendan_options_footer_string() {
   $options = get_option('brendan_options');
   echo "<textarea style='width: 100%' id='brendan_options_main_footer' name='brendan_options[footer]'>{$options['footer']}</textarea>";
 }
+
 
 function brendan_theme_options() {
 ?>
