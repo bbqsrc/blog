@@ -1,6 +1,6 @@
 <?php
 function brendan_version() {
-  return "0.9.1";
+  return "0.9.2";
 }
 
 
@@ -116,26 +116,32 @@ function brendan_register_settings() {
   add_settings_section( 'brendan_options_main', 'Main Settings', 'brendan_options_section_text', 'brendan_options_page' );
   add_settings_field( 'head', 'Content for &lt;head&gt;', 'brendan_options_head_string', 'brendan_options_page', 'brendan_options_main' );
   add_settings_field( 'header', 'Content after blog header', 'brendan_options_header_string', 'brendan_options_page', 'brendan_options_main' );
-  add_settings_field( 'footer', 'Content before &lt;/body&gt;', 'brendan_options_footer_string', 'brendan_options_page', 'brendan_options_main' );
-
+  add_settings_field( 'before_footer', 'Content before &lt;/body&gt;', 'brendan_options_before_footer_string', 'brendan_options_page', 'brendan_options_main' );
+  add_settings_field( 'footer', 'Content for &lt;footer&gt;', 'brendan_options_footer_string', 'brendan_options_page', 'brendan_options_main' );
 }
 
 
 function brendan_options_head_string() {
   $options = get_option('brendan_options');
-  echo "<textarea style='width: 100%' id='brendan_options_main_head' name='brendan_options[head]'>{$options['head']}</textarea>";
+  echo "<textarea style='width: 100%; height: 200px' id='brendan_options_main_head' name='brendan_options[head]'>{$options['head']}</textarea>";
 }
 
 
 function brendan_options_header_string() {
   $options = get_option('brendan_options');
-  echo "<textarea style='width: 100%' id='brendan_options_main_header' name='brendan_options[header]'>{$options['header']}</textarea>";
+  echo "<textarea style='width: 100%; height: 200px' id='brendan_options_main_header' name='brendan_options[header]'>{$options['header']}</textarea>";
+}
+
+
+function brendan_options_before_footer_string() {
+  $options = get_option('brendan_options');
+  echo "<textarea style='width: 100%; height: 200px' id='brendan_options_main_before_footer' name='brendan_options[before_footer]'>{$options['before_footer']}</textarea>";
 }
 
 
 function brendan_options_footer_string() {
   $options = get_option('brendan_options');
-  echo "<textarea style='width: 100%' id='brendan_options_main_footer' name='brendan_options[footer]'>{$options['footer']}</textarea>";
+  echo "<textarea style='width: 100%; height: 200px' id='brendan_options_main_footer' name='brendan_options[footer]'>{$options['footer']}</textarea>";
 }
 
 
