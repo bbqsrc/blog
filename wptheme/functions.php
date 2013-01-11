@@ -16,8 +16,8 @@ function brendan_widgets_init() {
     'id' => 'sidebar',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>",
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>'
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>'
   ));
 
   register_sidebar(array(
@@ -26,7 +26,7 @@ function brendan_widgets_init() {
     'before_widget' => '<li id="%1$s" class="widget %2$s">',
     'after_widget' => '</li>',
     'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>'
+    'after_title' => '</h2>'
   ));
 }
 add_action( 'widgets_init', 'brendan_widgets_init' );
