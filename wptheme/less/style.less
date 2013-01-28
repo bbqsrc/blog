@@ -449,6 +449,12 @@ textarea:focus {
   background: url(img/comment.png);
 }
 
+@media all and (max-width: 940px) {
+  #page {
+    padding: 0 0.3em !important;
+  }
+}
+
 @media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 767px) {
   #blog-title {
     text-align: center;
@@ -489,10 +495,6 @@ textarea:focus {
     padding-left: 0;
   }
 
-  #page {
-    padding: 0 0.3em !important;
-  }
-  
   * {
     max-height: 1000000px; /* Kill Font Boosting on Chrome without prejudice */
   }
