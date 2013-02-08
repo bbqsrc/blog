@@ -98,11 +98,15 @@ register_activation_hook( __FILE__, 'brendan_download_create_table' );
 
 function brendan_download_opts_page() {
 ?>
-<form action="options.php" method="post">
-  <?php settings_fields('brendan_download_options'); do_settings_sections('brendan_download'); ?>
-  <input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
+<div class="wrap">
+<h2>Brendan's Download Shortcode Options</h2>
+
+<form method="post" action="options.php">
+    <?php settings_fields('brendan_download_options'); ?>
+    <?php do_settings_sections('brendan_download_options_page'); ?>
+    <input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>">
 </form>
-<?php
+</div><?php
 }
 
 function brendan_download_options_path() {
@@ -128,15 +132,3 @@ function brendan_download_menu_init() {
   add_options_page( "Brendan's Download Shortcode", 'Download Shortcode', 'administrator', 'brendan-download-shortcode', 'brendan_download_opts_page' );
 }
 add_action( 'admin_menu', "brendan_download_menu_init" );
-
-function brendan_download_add_settings_link($links, $file) {
-  static $this_plugin;
-  if (!$this_plugin) $this_plugin = plugin_basename(__FILE__);
- 
-  if ($file == $this_plugin) {
-    $settings_link = '<a href="admin.php?page=brendan-download-shortcode">Settings</a>';
-    array_unshift($links, $settings_link);
-  }
-  return $links;
-}
-add_filter('plugin_action_links', 'brendan_download_add_settings_link', 10, 2 );
