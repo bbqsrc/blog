@@ -133,6 +133,6 @@ function brendan_download_admin_init() {
 add_action( 'admin_init', 'brendan_download_admin_init' );
 
 function brendan_download_menu_init() {
-  add_options_page( "Brendan's Download Shortcode", 'Download Shortcode', 'administrator', 'brendan-download-shortcode', 'brendan_download_opts_page' );
+  add_options_page( "Brendan's Download Shortcode", 'Download Shortcode', 'edit_files', 'brendan-download-shortcode', 'brendan_download_opts_page' );
 }
 add_action( 'admin_menu', "brendan_download_menu_init" );
