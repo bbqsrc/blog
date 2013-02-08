@@ -31,7 +31,7 @@ function brendan_download_query($filename) {
   global $wpdb;
   $table_name = $wpdb->prefix . "brendan_downloads";
 
-  $row = $wpdb->get_row($wpdb->prepare("SELECT * from $table_name WHERE file = '%s'", $filename));
+  $row = $wpdb->get_row($wpdb->prepare("SELECT * from $table_name WHERE file = '%s'", $filename), ARRAY_A);
 
   if ($row == null) {
     $options = get_option('brendan_download_options');
@@ -60,7 +60,7 @@ function brendan_download_query($filename) {
       'sha1' => $sha1sum
     ), array('%s', '%d', '%s', '%s'));
 
-    return $wpdb->get_row($wpdb->prepare("SELECT * from $table_name WHERE file = '%s'", $filename));
+    return $wpdb->get_row($wpdb->prepare("SELECT * from $table_name WHERE file = '%s'", $filename), ARRAY_A);
   }
 
   return $row;
