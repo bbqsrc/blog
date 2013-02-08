@@ -120,7 +120,7 @@ function brendan_download_admin_init() {
   add_settings_section( 'brendan_download_options_main', 'Main Settings', 'brendan_download_options_section_text', 'brendan_download_options_page' );
   add_settings_field( 'path', 'Path to files on operating system', 'brendan_download_options_path', 'brendan_download_options_page', 'brendan_download_options_main' );
   add_settings_field( 'url', 'URL prefix (eg "/my.tld/files")', 'brendan_download_options_url', 'brendan_download_options_page', 'brendan_download_options_main' );
-	add_options_page( "Brendan's Download Shortcode", 'Download Shortcode', 'manage_options', 'brendan-download-shortcode', 'brendan_download_opts_page' );
+	add_options_page( "Brendan's Download Shortcode", 'Download Shortcode', 'administrator', 'brendan-download-shortcode', 'brendan_download_opts_page' );
   
 }
 add_action( 'admin_init', 'brendan_download_admin_init' );
