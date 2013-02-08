@@ -9,6 +9,23 @@ Author URI: http://brendan.so
 License: CC0
 */
 
+function brendan_download_create_table() {
+    global $wpdb;
+    
+    $sql = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}brendan_downloads (
+      file text NOT null UNIQUE,
+      size int UNSIGNED NOT null,
+      md5 varchar NOT null,
+      sha1 varchar NOT null,
+      PRIMARY KEY (file)
+    );";
+
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+    dbDelta($sql);
+}
+register_activation_hook( __FILE__, 'brendan_download_create_table' );
+
+
 function brendan_download_query($filename) {
   global $wpdb;
   $table_name = $wpdb->prefix . "brendan_downloads";
@@ -78,25 +95,6 @@ function brendan_download_shortcode($attrs, $content = null) {
     return $out;
 }
 add_shortcode('download', 'brendan_download_shortcode');
-
-function brendan_download_create_table() {
-    global $wpdb;
-    
-    if ($wpdb->get_var("show tables like {$wpdb->prefix}brendan_downloads") != "{$wpdb->prefix}brendan_downloads") {
-      $sql = "CREATE TABLE {$wpdb->prefix}brendan_downloads (
-        file text NOT null UNIQUE,
-        size int UNSIGNED NOT null,
-        md5 varchar NOT null,
-        sha1 varchar NOT null,
-        PRIMARY KEY (file)
-      );";
-
-      require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-      dbDelta($sql);
-    }
-}
-register_activation_hook( __FILE__, 'brendan_download_create_table' );
-
 
 function brendan_download_opts_page() {
 ?>
