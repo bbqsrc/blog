@@ -13,8 +13,8 @@ function brendan_download_create_table() {
     global $wpdb;
     
     $sql = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}brendan_downloads (
-      id int unsigned not null unique,
-      file mediumtext NOT null UNIQUE,
+      id int unsigned not null unique auto_increment,
+      file mediumtext NOT null,
       size int UNSIGNED NOT null,
       md5 varchar(32) NOT null,
       sha1 varchar(40) NOT null,
