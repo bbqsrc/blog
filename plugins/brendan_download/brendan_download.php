@@ -3,7 +3,7 @@
 Plugin Name: Brendan's Download Shortcode
 Plugin URI: https://github.com/bbqsrc/blog
 Description: Shortcode for marking up my downloads 
-Version: 0.2.1
+Version: 0.2.2
 Author: Brendan Molloy
 Author URI: http://brendan.so
 License: CC0
@@ -94,7 +94,7 @@ function brendan_download_shortcode($attrs, $content = null) {
       return $out . "File '$content' not found.</pre>";
     }
 
-    $out .= "<a href='$fullurl'>$content</a>";
+    $out .= "<a href='$fullurl'>" . basename($content) . "</a>";
     $out .= " [" . brendan_download_human_filesize($filedata['size']) . "]\n";
     $out .= "md5sum: " . $filedata['md5'] . "\n";
     $out .= "sha1sum: " . $filedata['sha1'] . "\n";
