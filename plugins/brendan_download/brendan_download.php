@@ -89,7 +89,7 @@ function brendan_download_shortcode($attrs, $content = null) {
     }
 
     $out .= "<a href='$fullurl'>$content</a>";
-    $out .= "[" . brendan_download_human_filesize($filedata['size']) . "]\n";
+    $out .= " [" . brendan_download_human_filesize($filedata['size']) . "]\n";
     $out .= "md5sum: " . $filedata['md5'] . "\n";
     $out .= "sha1sum: " . $filedata['sha1'] . "\n";
     $out .= "</pre>";
