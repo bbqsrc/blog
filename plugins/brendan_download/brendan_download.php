@@ -110,6 +110,30 @@ function brendan_download_opts_page() {
 </div><?php
 }
 
+function brendan_download_options_table() {
+  global $wpdb;
+
+  $results = $wpdb->get_results("SELECT * from {$wpdb->prefix}brendan_downloads");
+
+  $out = "<table><tr>";
+  foreach (array('ID', 'File', 'Size', 'MD5', 'SHA1', 'Actions') as $h) {
+    $out .= "<th>{$h}</th>";
+  }
+  $out .= "</tr>";
+
+  foreach ($results as $row) {
+    $out .= "<tr>";
+    $out .= "<td>" . $row->id . "</td>";
+    $out .= "<td>" . $row->file . "</td>";
+    $out .= "<td>" . $row->size . "</td>";
+    $out .= "<td>" . $row->md5 . "</td>";
+    $out .= "<td>" . $row->sha1 . "</td>";
+    $out .= "<td><a href='#'>&times;</a></td>";
+    $out .= "</tr>";
+  }
+  return $out . "</table>";
+}
+
 function brendan_download_options_path() {
   $options = get_option('brendan_download_options');
   echo "<input id='brendan_brendan_options_path' name='brendan_download_options[path]' value='{$options['path']}'>";
@@ -118,6 +142,7 @@ function brendan_download_options_path() {
 function brendan_download_options_url() {
   $options = get_option('brendan_download_options');
   echo "<input id='brendan_brendan_options_url' name='brendan_download_options[url]' value='{$options['url']}'>";
+  echo brendan_download_options_table();
 }
 
 function brendan_download_options_section_text() {
