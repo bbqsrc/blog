@@ -119,6 +119,10 @@ function brendan_download_options_url() {
   echo "<input id='brendan_brendan_options_url' name='brendan_download_options[url]' value='{$options['url']}'>";
 }
 
+function brendan_download_options_section_text() {
+  echo "Set the path and URL for file access.";
+}
+
 function brendan_download_admin_init() {
   register_setting( 'brendan_download_options', 'brendan_download_options' );
   add_settings_section( 'brendan_download_options_main', 'Main Settings', 'brendan_download_options_section_text', 'brendan_download_options_page' );
