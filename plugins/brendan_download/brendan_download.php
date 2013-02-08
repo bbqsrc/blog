@@ -23,7 +23,7 @@ function brendan_download_create_table() {
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     dbDelta($sql);
 }
-register_activation_hook( __FILE__, 'brendan_download_create_table' );
+register_activation_hook( WP_PLUGIN_DIR . '/brendan_download/brendan_download.php', 'brendan_download_create_table' );
 
 
 function brendan_download_query($filename) {
