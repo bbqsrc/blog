@@ -16,7 +16,8 @@ function brendan_download_query($filename) {
   $row = $wpdb->get_row($wpdb->prepare("SELECT * from $table_name WHERE name = '%s'", $filename));
 
   if ($row == null) {
-    $path = get_option('brendan_download_options')['path'];
+    $options = get_option('brendan_download_options');
+    $path = $options['path'];
     if ($path == null) {
       return;
     }
@@ -60,7 +61,8 @@ function brendan_download_shortcode($attrs, $content = null) {
       return $out . "</pre>";
     }
     
-    $url = get_option('brendan_download_options')['url'];
+    $options = get_option('brendan_download_options');
+    $url = $options['url'];
     $fullurl = $url . $content;
 
     $filedata = brendan_download_query($content);
