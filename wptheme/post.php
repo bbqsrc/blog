@@ -2,8 +2,15 @@
             <header>
               <div class='title'>
                 <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
-                <?php if ('post' == get_post_type()): ?>
+                <?php 
+                $subtitle = get_post_meta(get_the_ID(), '_brendan_subtitle', true);
+                $is_post = (get_post_type() == 'post');
+                if ($subtitle != "" || $is_post): ?>
                 <div class='byline'>
+                  <?php if ($subtitle != '') {
+                    echo "<div>" . $subtitle . "</div>";
+                  }
+                  if ($is_post):?>
                   <em>
                     <a href="<?php echo get_day_link(get_the_time('Y'), get_the_time('m'), get_the_time('d')); ?>">
                       <?php echo get_the_time('j F, Y'); ?>
@@ -20,7 +27,7 @@
                 <a class="comments" href="<?php echo (is_home() ? the_permalink() : '' ).'#comments' ?>">
                   <?php echo get_comments_number(); ?> <img src="<?php echo get_template_directory_uri(); ?>/img/comment.png" alt="comments">
                 </a>
-                <?php endif; ?>
+                <?php endif; endif; ?>
               </div>
             </header>
             

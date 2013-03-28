@@ -1,6 +1,6 @@
 <?php
 function brendan_version() {
-  return "0.10";
+  return "0.11";
 }
 
 
@@ -104,6 +104,54 @@ function brendan_comment( $comment, $args, $depth ) {
 }
 add_action( 'admin_menu', 'brendan_theme_menu' );
 
+
+function brendan_add_subtitle_metabox() {
+    $screens = array( 'post', 'page' );
+    foreach ($screens as $screen) {
+        add_meta_box(
+            'brendan_subtitle',
+            'Subtitle',
+            'brendan_print_subtitle_metabox',
+            $screen,
+            'normal',
+            'high'
+        );
+    }
+}
+add_action("add_meta_boxes", "brendan_add_subtitle_metabox");
+
+function brendan_print_subtitle_metabox( $post ) {
+
+  // Use nonce for verification
+  wp_nonce_field( plugin_basename( __FILE__ ), 'brendan_subtitle_nonce' );
+
+  // The actual fields for data entry
+  // Use get_post_meta to retrieve an existing value from the database and use the value for the form
+  $value = get_post_meta( $post->ID, '_brendan_subtitle', true );
+  echo '<input type="text" style="padding: 3px 8px; font-size: 1.7em; line-height: 100%; width: 100%; outline: 0;" name="brendan_subtitle" value="'.esc_attr($value).'">';
+}
+
+
+function brendan_save_subtitle( $post_id ) {
+  if ( 'page' == $_POST['post_type'] ) {
+    if ( ! current_user_can( 'edit_page', $post_id ) )
+        return;
+  } else {
+    if ( ! current_user_can( 'edit_post', $post_id ) )
+        return;
+  }
+
+  if ( ! isset( $_POST['brendan_subtitle_nonce'] ) || ! wp_verify_nonce( $_POST['brendan_subtitle_nonce'], plugin_basename( __FILE__ ) ) )
+      return;
+
+  $post_ID = $_POST['post_ID'];
+  $mydata = sanitize_text_field( $_POST['brendan_subtitle'] );
+
+  update_post_meta($post_ID, '_brendan_subtitle', $mydata);
+  // or a custom table (see Further Reading section below)
+
+}
+add_action("save_post", "brendan_save_subtitle");
 
 function brendan_theme_menu() {
   add_theme_page( "Brendan's Theme Bits", "Theme Bits", "administrator", "brendans-theme-bits", 'brendan_theme_options' );
