@@ -23,9 +23,9 @@ function brendan_lang_shortcode_lang($atts, $content) {
 add_shortcode('lang', 'brendan_lang_shortcode_lang');
 
 function brendan_lang_shortcode_list($atts, $content) {
-  $langs = array_keys($atts);
   $out = '';
-  foreach ($lang as $langs) {
+  foreach ($atts as $lang) {
+    echo $lang;
     $out .= "<a href='?lang=" . $lang . "'>" . $lang . "</a>\n";
   }
   return $out;
