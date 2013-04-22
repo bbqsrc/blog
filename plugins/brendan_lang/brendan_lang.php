@@ -10,14 +10,14 @@ License: CC0
 */
 
 function brendan_lang_shortcode_lang($atts, $content) {
-  $keys = array_keys($atts);
-  $text_lang = $keys[0] || "en";
-  $lang = get_query_var('lang') || "en";
+  $text_lang = $atts[0];
+  if ($text_lang == null) { $text_lang = "en"; }
+
+  $lang = $_GET['lang']; 
+  if ($lang == null) { $lang = "en"; }
 
   if ($lang == $text_lang) {
     return $content;
-  } else {
-    return '';
   }
 }
 add_shortcode('lang', 'brendan_lang_shortcode_lang');
