@@ -19,6 +19,7 @@ function brendan_lang_shortcode_lang($atts, $content) {
     return '';
   }
 }
+add_shortcode('lang', 'brendan_lang_shortcode_lang');
 
 function brendan_lang_shortcode_list($atts, $content) {
   $langs = array_keys($atts);
@@ -28,3 +29,4 @@ function brendan_lang_shortcode_list($atts, $content) {
   }
   return $out;
 }
+add_shortcode('lang-list', 'brendan_lang_shortcode_list');
