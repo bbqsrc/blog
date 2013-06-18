@@ -27,7 +27,9 @@
                 <a class="comments" href="<?php echo (is_home() ? the_permalink() : '' ).'#comments' ?>">
                   <?php echo get_comments_number(); ?> <img src="<?php echo get_template_directory_uri(); ?>/img/comment.png" alt="comments">
                 </a>
-                <?php else { echo '</div>'; } endif; endif; ?>
+                <?php else: ?>
+                </div>
+                <?php endif; endif; ?>
               </div>
             </header>
             
