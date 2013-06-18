@@ -13,7 +13,7 @@
                   if ($is_post):?>
                   <em>
                     <a href="<?php echo get_day_link(get_the_time('Y'), get_the_time('m'), get_the_time('d')); ?>">
-                      <?php echo get_the_time('j F, Y'); ?>
+                      <time datetime="<?php echo get_the_time('Y-m-d'); ?>"><?php echo get_the_time('j F, Y'); ?></time>
                     </a>
                   </em>
                   &mdash;
@@ -27,7 +27,7 @@
                 <a class="comments" href="<?php echo (is_home() ? the_permalink() : '' ).'#comments' ?>">
                   <?php echo get_comments_number(); ?> <img src="<?php echo get_template_directory_uri(); ?>/img/comment.png" alt="comments">
                 </a>
-                <?php endif; endif; ?>
+                <?php else { echo '</div>'; } endif; endif; ?>
               </div>
             </header>
             
