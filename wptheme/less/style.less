@@ -7,6 +7,7 @@
 @underline-color: #d55;
 @widget-title-color: #e55;
 @post-top: rgba(210, 200, 200, 0.5);
+@shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 
 .screen-reader-text {
   display: none;
@@ -48,13 +49,14 @@ pre {
 
 code, kbd {
   border-radius: 1px;
+  color: #0073ae;
 }
 
 pre, code, kbd {
   font-family: @monospace-font;
   font-size: 75%;
   background-color: darken(@light-bg, 2%);
-  box-shadow: 0px 0px 5px darken(@light-bg, 10%);
+  box-shadow: @shadow;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
@@ -89,12 +91,12 @@ pre.email {
 
   &.reply {
     background-color: @email-reply-bg;
-    box-shadow: 0px 0px 5px darken(@email-reply-bg, 15%);
+    box-shadow: @shadow;
   }
 }
 
 .post {
-  box-shadow: 0px 0px 5px @dark-bg;
+  box-shadow: @shadow;
   padding: 1em;
   margin-bottom: 2em;
   background-color: #fdfdff;
@@ -221,7 +223,7 @@ div.continue, .post footer {
   margin: 0 auto;
   padding: 0 2em;
   max-width: 940px;
-  box-shadow: 0px 0px 20px gray;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
 
 #blog-header, #blog-footer {
@@ -397,7 +399,7 @@ textarea {
 input[type='text']:focus,
 textarea:focus {
   outline: 1px solid fadeout(@underline-color, 50%);
-  box-shadow: 0px 0px 5px @underline-color;
+  box-shadow: @shadow;
 }
 
 #s {
