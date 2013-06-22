@@ -50,7 +50,7 @@ WPGithubRepos.prototype.updateContent = function(json) {
         
         if (json.data[i].updated_at) {
             var date = new Date(json.data[i].updated_at);
-            node.append($("<div><small>Last update: " +  date.getDate() + "/" + date.getMonth()+1 + "/" + date.getFullYear() + "</small></div>"));
+            node.append($("<div><small>Last update: " +  date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear() + "</small></div>"));
         }
         
         if (json.data[i].description) {
