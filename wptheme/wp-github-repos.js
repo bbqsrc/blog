@@ -58,7 +58,7 @@ WPGithubRepos.prototype.updateContent = function(json) {
         }
         
         if (json.data[i].fork) {
-            node.find("a").addClass('fork');   
+            node.find("strong").addClass('fork');   
         }
     }
 
