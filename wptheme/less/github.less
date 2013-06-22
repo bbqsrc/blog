@@ -1,0 +1,45 @@
+#gh {
+  padding: 0;
+}
+
+.fork:after {
+  content: " (fork)";
+  font-size: 80%;
+  vertical-align: top;
+}
+
+.project {
+  float: left;
+  width: 200px;
+  list-style: none;
+  margin: 0.5em;
+  padding: 0 !important;
+}
+
+.project a {
+  min-height: 200px;
+  box-sizing: border-box;
+  padding: 0.5em;
+  background-color: #eee;
+  display: block;
+  border-bottom: 0 !important;
+}
+
+.project a:hover {
+  background-color: #777;
+  color: #eee;
+}
+
+.project .desc {
+  word-wrap: break-word;
+  margin: 0.5em 0;
+}
+
+@media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 767px) {
+  .project {
+    width: 100% !important;
+  }
+  .project a {
+    min-height: auto !important;
+  }
+}
