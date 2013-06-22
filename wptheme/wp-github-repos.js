@@ -34,27 +34,32 @@ function WPGithubRepos(username, target) {
 
 WPGithubRepos.prototype.updateContent = function(json) {
     var node;
+    
+    this.target.empty();
+
     for (var i = 0, ii = json.data.length; i < ii; ++i) {
         node = $(document.createElement('li'));
-        
+        node.addClass('project');
+        this.target.append(node);
+       
+        node.append($("<a href='"+json.data[i].html_url+"'></a>"));
+        node = node.find('a');
         if (json.data[i].name) {
-            node.append($("<a href='"+json.data[i].html_url+"'>"+json.data[i].name+"</a>"));
+            node.append($("<div><strong>"+json.data[i].name+"</strong></div>"));
+        }
+        
+        if (json.data[i].updated_at) {
+            var date = new Date(json.data[i].updated_at);
+            node.append($("<div><small>Last update: " +  date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear() + "</small></div>"));
         }
         
         if (json.data[i].description) {
-            node.append(document.createTextNode(": " + json.data[i].description + " "));
-        }
-            
-        if (json.data[i].updated_at) {
-            var date = new Date(json.data[i].updated_at);
-            node.append($("<small>Last update: " +  date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear() + "</small>"));
+            node.append($("<p class='desc'>"+json.data[i].description + "</p>"));
         }
         
         if (json.data[i].fork) {
             node.find("a").addClass('fork');   
         }
-        
-        $(this.target).append(node);
     }
 
 }
