@@ -1,6 +1,6 @@
 <?php
 function brendan_version() {
-  return "0.14.2";
+  return "0.15";
 }
 
 
@@ -47,9 +47,6 @@ function brendan_scripts_styles() {
 	$wp_styles->add_data('brendan-shit-browsers', 'conditional', 'lt IE 8');
 
 	wp_enqueue_style('brendan-style', get_stylesheet_uri(), array(), brendan_version());
-	
-	$query = array('family' => 'Scada:400italic,700italic,400,700');
-	wp_enqueue_style('brendan-fonts', add_query_arg($query, "$protocol://fonts.googleapis.com/css"));
 }
 add_action( 'wp_enqueue_scripts', 'brendan_scripts_styles' );
 

@@ -1,0 +1,13 @@
+/*
+Theme Name: Brendan's Theme
+Theme URI: http://brendan.so/
+Description: Brendan's WordPress theme
+Author: Brendan Molloy
+Author URI: http://brendan.so/
+Version: 0.15
+Tags: brendan, wins, forever
+
+License: CC0
+License URI: http://creativecommons.org/publicdomain/zero/1.0/
+*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
