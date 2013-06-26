@@ -77,11 +77,11 @@ function brendan_quote_shortcode($attrs, $content = '') {
     $out = "<blockquote class='quote'>" . trim($content) . "\n";
 
     if ($attrs['source'] != null && $attrs['name'] != null) {
-        $out .= "<cite><a href='" . source . "'>" . name . "</a></cite>";
+        $out .= "<cite><a href='" . $attrs['source'] . "'>" . $attrs['name'] . "</a></cite>";
     } else if ($attrs['source'] != null) {
-        $out .= "<cite><a href='" . source . "'>" . source . "</a></cite>";
+        $out .= "<cite><a href='" . $attrs['source'] . "'>" . $attrs['source'] . "</a></cite>";
     } else if ($attrs['name'] != null) {
-        $out .= "<cite>" . name . "</cite>";
+        $out .= "<cite>" . $attrs['name'] . "</cite>";
     }
 
     $out .= "</blockquote>";
