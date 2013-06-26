@@ -74,14 +74,14 @@ function brendan_quote_shortcode($attrs, $content = '') {
         'sent' => null
     ), $attrs));
 
-    $out = "<blockquote class='quote'>" . trim($content) . '\n';
+    $out = "<blockquote class='quote'>" . trim($content) . "\n";
 
     if ($attrs['source'] != null && $attrs['name'] != null) {
-        $out .= "<small><a href='" . source . "'>" . name . "</a></small>";
+        $out .= "<cite><a href='" . source . "'>" . name . "</a></cite>";
     } else if ($attrs['source'] != null) {
-        $out .= "<small><a href='" . source . "'>" . source . "</a></small>";
+        $out .= "<cite><a href='" . source . "'>" . source . "</a></cite>";
     } else if ($attrs['name'] != null) {
-        $out .= "<small>" . name . "</small>";
+        $out .= "<cite>" . name . "</cite>";
     }
 
     $out .= "</blockquote>";
