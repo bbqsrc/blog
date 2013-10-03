@@ -44,14 +44,6 @@
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'twentyeleven' ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
-
-	<?php
-		/* If there are no comments and comments are closed, let's leave a little note, shall we?
-		 * But we don't want the note on pages or post types that do not support comments.
-		 */
-		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
-		<p class="nocomments"><?php _e( 'Comments are closed.', 'twentyeleven' ); ?></p>
   <?php else: ?>
     <h2 style="margin: 0" id="comments-title">No comments</h2>
 
@@ -59,5 +51,14 @@
 
 </div>
 <div class='post'>
+
+	<?php
+		/* If there are no comments and comments are closed, let's leave a little note, shall we?
+		 * But we don't want the note on pages or post types that do not support comments.
+		 */
+		if ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
+	?>
+		<p class="nocomments"><?php _e( 'Comments are closed.', 'twentyeleven' ); ?></p>
+  <?php endif; ?>
   <?php comment_form(); ?>
 </div>
