@@ -57,7 +57,7 @@ function brendan_comment( $comment, $args, $depth ) {
 		case 'pingback' :
 		case 'trackback' :
 	?>
-	<li class="post pingback">
+	<li class="pingback">
 		<p><?php _e( 'Pingback:', 'brendan' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'brendan' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 			break;
