@@ -470,6 +470,26 @@ textarea:focus {
   background: url(img/comment.png);
 }
 
+.comment-edit-link {
+  float: right;
+  padding: 1px 5px;
+  color: @light-bg;
+  border: 1px solid lighten(@dark-fg, 10%) !important; // HACK important fix .post article a
+  background-color: lighten(@dark-fg, 20%);
+  border-radius: 3px;
+  font-size: 75%;
+
+  &:hover {
+    background-color: transparent;
+    color: @dark-fg;
+  }
+  
+  &:active {
+    background-color: @dark-fg;
+    color: white;
+  }
+}
+
 @media all and (max-width: 940px) {
   #page {
     padding: 0 0.3em !important;
