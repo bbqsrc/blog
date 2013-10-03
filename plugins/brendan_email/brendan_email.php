@@ -3,7 +3,7 @@
 Plugin Name: Brendan's Email Shortcode
 Plugin URI: https://github.com/bbqsrc/blog
 Description: Shortcode for marking up my emails
-Version: 0.1
+Version: 0.2
 Author: Brendan Molloy
 Author URI: http://brendan.so
 License: CC0
@@ -74,7 +74,7 @@ function brendan_email_shortcode($attrs, $content = '') {
         'sent' => null
     ), $attrs));
 
-    $out = "<pre class='email";
+    $out = "<blockquote class='email";
     if ($attrs['type'] == 'reply') {
         $out .= " reply";
     }
@@ -96,7 +96,7 @@ function brendan_email_shortcode($attrs, $content = '') {
         $out .= "Subject: " . $attrs['subject'] . "\n";
     } 
    
-    $out .= "\n" . trim($content) . "</pre>";
+    $out .= "\n" . trim($content) . "</blockquote>";
 
     return $out;
 }

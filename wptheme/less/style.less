@@ -96,14 +96,30 @@ li {
   }
 }
 
-pre.email {
+.email {
   font-family: @sans-serif-font;
   font-size: 90%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 
+  &:before {
+    display: block;
+    content: '\00BB';
+    font-size: 3.5em;
+    color: #ddd;
+    margin-bottom: 0.5em;
+    line-height: 0.2em;
+  }
+  
   &.reply {
     background-color: @email-reply-bg;
     box-shadow: @shadow;
+  
+    &:before {
+      content: '\00AB';
+    }
   }
+  
 }
 
 .post {
@@ -528,7 +544,7 @@ textarea:focus {
     padding: 0 1em;
   }
 
-  pre.email {
+  .email {
     margin: 1em 0;
   }
 
