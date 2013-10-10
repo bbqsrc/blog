@@ -27,13 +27,14 @@ if (!window.localStorage) {
   window.localStorage.length = (document.cookie.match(/\=/g) || window.localStorage).length;
 }
 
-function WPGithubRepos(username, target) {
+function WPGithubRepos(username, target, loadingText) {
     this.username = username;
     this.target = $(target);
+    this.loadingText = loadingText || "Loading...";
 }
 
 WPGithubRepos.prototype.updateContent = function(json) {
-    var node;
+    var node, anchorNode;
     
     this.target.empty();
 
@@ -43,22 +44,27 @@ WPGithubRepos.prototype.updateContent = function(json) {
         this.target.append(node);
        
         node.append($("<a href='"+json.data[i].html_url+"'></a>"));
-        node = node.find('a');
+        anchorNode = node.find('a');
+        
         if (json.data[i].name) {
-            node.append($("<div><strong>"+json.data[i].name+"</strong></div>"));
+            anchorNode.append($("<div><strong>"+json.data[i].name+"</strong></div>"));
         }
         
-        if (json.data[i].updated_at) {
-            var date = new Date(json.data[i].updated_at);
-            node.append($("<div><small>Last update: " +  date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear() + "</small></div>"));
+        if (json.data[i].language) {
+            node.addClass('language-' + json.data[i].language.toLowerCase());
+        }
+
+        if (json.data[i].pushed_at) {
+            var date = new Date(json.data[i].pushed_at);
+            anchorNode.append($("<div><small>Last push: " +  date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear() + "</small></div>"));
         }
         
         if (json.data[i].description) {
-            node.append($("<p class='desc'>"+json.data[i].description + "</p>"));
+            anchorNode.append($("<p class='desc'>"+json.data[i].description + "</p>"));
         }
         
         if (json.data[i].fork) {
-            node.find("strong").addClass('fork');   
+            anchorNode.find("strong").addClass('fork');   
         }
     }
 
@@ -67,6 +73,8 @@ WPGithubRepos.prototype.updateContent = function(json) {
 WPGithubRepos.prototype.load = function() {
     var json = localStorage.getItem('wpgithubrepos-' + this.username),
         self = this;
+    
+    this.target.empty().append(this.loadingText);
 
     if (json != null) {
         json = JSON.parse(json);
@@ -83,7 +91,7 @@ WPGithubRepos.prototype.load = function() {
     function ajaxLookup() {
         $.ajax({
             type: 'GET',
-            url: 'https://api.github.com/users/' + self.username + '/repos?per_page=200&sort=updated',
+            url: 'https://api.github.com/users/' + self.username + '/repos?per_page=200&sort=pushed',
             dataType: 'jsonp',
             jsonpCallback: 'callback',
             success: function(json) {
