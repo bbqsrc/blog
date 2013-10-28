@@ -68,8 +68,8 @@ pre, code, kbd {
 
 blockquote {
   border-left: 0.4em solid #ddd;
-  padding-left: 1em;
-  margin: 0 0 0 1em;
+  padding: 1em;
+  margin: 2em 0 2em 1em;
   color: #888;
   font-size: 95%;
 
@@ -110,8 +110,8 @@ li {
   }
   
   &.reply {
-    background-color: @email-reply-bg;
-    box-shadow: @shadow;
+    //background-color: @email-reply-bg;
+    //box-shadow: @shadow;
   
     &:before {
       content: '\00AB';
@@ -520,11 +520,7 @@ textarea:focus {
     padding-bottom: 2em;
   }
   
-  #sidebar {
-    padding-left: 0;
-  }
-
-  #blog-title, #blog-content, #blog-nav, #sidebar {
+  #blog-title, #blog-content, #blog-nav/*, #sidebar*/ {
     float: left;
     width: 100%;
   }

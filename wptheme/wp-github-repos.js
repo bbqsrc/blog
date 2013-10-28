@@ -47,7 +47,7 @@ WPGithubRepos.prototype.updateContent = function(json) {
         anchorNode = node.find('a');
         
         if (json.data[i].name) {
-            anchorNode.append($("<div><strong>"+json.data[i].name+"</strong></div>"));
+            anchorNode.append($("<div><strong class='title'>"+json.data[i].name+"</strong></div>"));
         }
         
         if (json.data[i].language) {
