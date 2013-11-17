@@ -44,7 +44,7 @@ function brendan_scripts_styles() {
 	*/
 
 	wp_enqueue_style('brendan-shit-browsers', get_template_directory_uri() . '/shit-browsers.css', array(), brendan_version());
-	$wp_styles->add_data('brendan-shit-browsers', 'conditional', 'lt IE 8');
+	$wp_styles->add_data('brendan-shit-browsers', 'conditional', 'lt IE 9');
 
 	wp_enqueue_style('brendan-style', get_stylesheet_uri(), array(), brendan_version());
 }

@@ -11,3 +11,11 @@
 #top-menu li.widget {
   float: left;
 }
+
+.post, .email {
+  border: 1px solid #ddd;
+}
+
+a img {
+  border: 0;
+}
