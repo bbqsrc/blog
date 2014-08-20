@@ -4,10 +4,10 @@ Theme URI: http://brendan.so/
 Description: Brendan's WordPress theme
 Author: Brendan Molloy
 Author URI: http://brendan.so/
-Version: 0.20.3
+Version: 0.21
 Tags: brendan, wins, forever
 
 License: CC0
 License URI: http://creativecommons.org/publicdomain/zero/1.0/
 */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
