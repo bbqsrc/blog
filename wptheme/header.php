@@ -4,6 +4,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
     <!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/html5shiv.js"></script><![endif]-->
+    <script src="<?php echo get_template_directory_uri() ?>/jquery-2.1.3.min.js"></script>
     <script src="<?php echo get_template_directory_uri() ?>/retina.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">

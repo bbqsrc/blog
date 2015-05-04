@@ -1,6 +1,6 @@
 <?php
 function brendan_version() {
-  return "0.21";
+  return "0.22";
 }
 
 
