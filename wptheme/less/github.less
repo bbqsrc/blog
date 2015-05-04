@@ -2,20 +2,10 @@
   padding: 0;
 }
 
-.project-gradient(@color) {
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,@color 97%,@color 100%);
-  background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,@color 97%,@color 100%);
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,@color 97%,@color 100%);
-}
-
 .language(@language, @bgcolor, @color: white) {
   .language-@{language} a {
     color: @color;
     background-color: @bgcolor;
-  
-    &:after {
-      .project-gradient(@bgcolor);
-    }
   }
 }
 
@@ -49,7 +39,7 @@
   display: block;
   border-bottom: 0 !important;
   overflow: hidden;
-  
+
   &:after {
     content: '';
     display: block;
@@ -58,7 +48,6 @@
     bottom: 0;
     left: 0;
     height: 16px;
-    .project-gradient(#eee);
   }
 
   &:hover {
@@ -78,17 +67,189 @@
   }
 }
 
-.language(python, #3581ba);
-.language(javascript, #f15501);
-.language(php, #6e03c1);
-.language(css, #1f085e);
-.language(vala, #3581ba);
+.language(abap, #E8274B);
+.language(ags-script, #B9D9FF);
+.language(ampl, #E6EFBB);
+.language(antlr, #9DC3FF);
+.language(apl, #5A8164);
+.language(asp, #6a40fd);
+.language(ats, #1ac620);
+.language(actionscript, #882B0F);
+.language(ada, #02f88c);
+.language(agda, #315665);
+.language(alloy, #cc5c24);
+.language(arc, #aa2afe);
 .language(arduino, #bd79d1);
-.language(java, #b07219);
+.language(aspectj, #a957b0);
+.language(assembly, #6E4C13);
+.language(autohotkey, #6594b9);
+.language(autoit, #1C3552);
+.language(blitzmax, #cd6400);
+.language(boo, #d4bec1);
+.language(brainfuck, #2F2530);
+.language(c, #555555);
+.language(csharp, #178600);
+.language(cpp, #f34b7d);
+.language(css, #563d7c);
+.language(chapel, #8dc63f);
+.language(cirru, #ccccff);
+.language(clarion, #db901e);
+.language(clean, #3F85AF);
+.language(clojure, #db5855);
 .language(coffeescript, #244776);
+.language(coldfusion, #ed2cd6);
+.language(coldfusion-cfc, #ed2cd6);
+.language(common-lisp, #3fb68b);
+.language(component-pascal, #b0ce4e);
+.language(crystal, #776791);
+.language(d, #fcd46d);
+.language(dm, #447265);
+.language(dart, #00B4AB);
+.language(diff, #88dddd);
+.language(dogescript, #cca760);
+.language(dylan, #6c616e);
+.language(e, #ccce35);
+.language(ecl, #8a1267);
+.language(eagle, #814C05);
+.language(eiffel, #946d57);
+.language(elixir, #6e4a7e);
+.language(elm, #60B5CC);
+.language(emacs-lisp, #c065db);
+.language(emberscript, #FFF4F3);
+.language(erlang, #B83998);
+.language(fsharp, #b845fc);
+.language(flux, #88ccff);
+.language(fortran, #4d41b1);
+.language(factor, #636746);
+.language(fancy, #7b9db4);
+.language(fantom, #dbded5);
+.language(forth, #341708);
+.language(frege, #00cafe);
+.language(game-maker-language, #8fb200);
+.language(glyph, #e4cc98);
+.language(gnuplot, #f0a9f0);
+.language(go, #375eab);
+.language(golo, #88562A);
+.language(gosu, #82937f);
+.language(grammatical-framework, #79aa7a);
+.language(groovy, #e69f56);
+.language(html, #e44b23);
+.language(handlebars, #01a9d6);
+.language(harbour, #0e60e3);
+.language(haskell, #29b544);
+.language(haxe, #f7941e);
+.language(hy, #7790B2);
+.language(idl, #a3522f);
+.language(io, #a9188d);
+.language(ioke, #078193);
+.language(isabelle, #FEFE00);
+.language(j, #9EEDFF);
+.language(jflex, #DBCA00);
+.language(java, #b07219);
+.language(javascript, #f1e05a);
+.language(julia, #a270ba);
+.language(krl, #28431f);
+.language(kotlin, #EA4DFA);
+.language(lfe, #004200);
+.language(lolcode, #cc9900);
+.language(lsl, #3d9970);
+.language(lasso, #999999);
+.language(latte, #A8FF97);
+.language(livescript, #499886);
+.language(lookml, #652B81);
+.language(lua, #000080);
+.language(mtml, #b7e1f4);
+.language(makefile, #427819);
+.language(mask, #f97732);
+.language(matlab, #bb92ac);
+.language(max, #c4a79c);
+.language(mercury, #ff2b2b);
+.language(mirah, #c7a938);
+.language(nemerle, #3d3c6e);
+.language(netlinx, #0aa0ff);
+.language(netlinxperb, #747faa);
+.language(netlogo, #ff6375);
+.language(newlisp, #87AED7);
+.language(nimrod, #37775b);
+.language(nit, #009917);
+.language(nix, #7e7eff);
+.language(nu, #c9df40);
+.language(ocaml, #3be133);
+.language(objective-c, #438eff);
+.language(objective-cpp, #6866fb);
+.language(objective-j, #ff0c5a);
+.language(omgrofl, #cabbff);
+.language(opal, #f7ede0);
+.language(oxygene, #cdd0e3);
+.language(oz, #fab738);
+.language(pawn, #dbb284);
+.language(php, #4F5D95);
+.language(pan, #cc0000);
+.language(papyrus, #6600cc);
+.language(parrot, #f3ca0a);
+.language(pascal, #b0ce4e);
+.language(perl, #0298c3);
+.language(perl6, #0000fb);
+.language(piglatin, #fcd7de);
+.language(pike, #005390);
+.language(pogoscript, #d80074);
+.language(processing, #0096D8);
+.language(prolog, #74283c);
+.language(propeller-spin, #7fa2a7);
+.language(puppet, #332A77);
+.language(pure-data, #91de79);
+.language(purebasic, #5a6986);
+.language(purescript, #1D222D);
+.language(python, #3572A5);
+.language(qml, #44a51c);
+.language(r, #198ce7);
+.language(raml, #77d9fb);
+.language(racket, #22228f);
+.language(ragel-in-ruby-host, #e17600);
+.language(rebol, #358a5b);
+.language(red, #ee0000);
+.language(rouge, #cc0088);
 .language(ruby, #701516);
-.language(c, #555);
 .language(rust, #dea584);
+.language(sas, #B34936);
+.language(sqf, #3F3F3F);
+.language(saltstack, #646464);
+.language(scala, #7dd3b0);
+.language(scheme, #1e4aec);
+.language(self, #0579aa);
+.language(shell, #89e051);
+.language(shen, #120F14);
+.language(slash, #007eff);
+.language(slim, #ff8f77);
+.language(smalltalk, #596706);
+.language(sourcepawn, #5c7611);
+.language(squirrel, #800000);
+.language(standard-ml, #dc566d);
+.language(supercollider, #46390b);
+.language(swift, #ffac45);
+.language(systemverilog, #DAE1C2);
+.language(tcl, #e4cc98);
+.language(tex, #3D6117);
+.language(turing, #45f715);
+.language(typescript, #2b7489);
+.language(unified-parallel-c, #4e3617);
+.language(unrealscript, #a54c4d);
+.language(vhdl, #adb2cb);
+.language(vala, #fbe5cd);
+.language(verilog, #b2b7f8);
+.language(viml, #199f4b);
+.language(visual-basic, #945db7);
+.language(volt, #1F1F1F);
+.language(web-ontology-language, #9cc9dd);
+.language(xc, #99DA07);
+.language(xquery, #5232e7);
+.language(zephir, #118f9e);
+.language(ec, #913960);
+.language(edn, #db5855);
+.language(nesc, #94B0C7);
+.language(ooc, #b0b77e);
+.language(wisp, #7582D1);
+.language(xbase, #403a40);
 
 .project .desc {
   word-wrap: break-word;
@@ -117,23 +278,4 @@
     }
   }
 }
-
-/*
-.language-python a {
-    background-color: #3581ba;
-    color: white;
-}
-.language-javascript a {
-    background-color: #f15501;
-    color: white;
-}
-.language-php a {
-    background-color: #6e03c1;
-    color: white;
-}
-.language-css a {
-    background-color: #1f085e;
-    color: white;
-}
-*/
 
